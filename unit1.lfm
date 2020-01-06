@@ -1,0 +1,116 @@
+object Form1: TForm1
+  Left = 248
+  Height = 201
+  Top = 110
+  Width = 233
+  Caption = 'Form1'
+  ClientHeight = 201
+  ClientWidth = 233
+  LCLVersion = '2.0.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 72
+    Top = 0
+    Width = 233
+    Align = alTop
+    ClientHeight = 72
+    ClientWidth = 233
+    TabOrder = 0
+    object Edit1: TEdit
+      Left = 8
+      Height = 21
+      Top = 8
+      Width = 120
+      TabOrder = 0
+      Text = 'ip or domain'
+    end
+    object SpinEdit1: TSpinEdit
+      Left = 8
+      Height = 21
+      Top = 40
+      Width = 56
+      MaxValue = 65535
+      MinValue = 1
+      TabOrder = 1
+      Value = 1
+    end
+    object Button1: TButton
+      Left = 136
+      Height = 21
+      Top = 8
+      Width = 40
+      Caption = 'Scan'
+      OnClick = Button1Click
+      TabOrder = 2
+    end
+    object Find: TButton
+      Left = 184
+      Height = 21
+      Top = 8
+      Width = 40
+      Caption = 'Find'
+      OnClick = FindClick
+      TabOrder = 3
+    end
+    object SpinEdit2: TSpinEdit
+      Left = 72
+      Height = 21
+      Top = 40
+      Width = 56
+      MaxValue = 65535
+      MinValue = 1
+      TabOrder = 4
+      Value = 65535
+    end
+    object Button2: TButton
+      Left = 136
+      Height = 21
+      Top = 40
+      Width = 40
+      Caption = 'Clear'
+      OnClick = Button2Click
+      TabOrder = 5
+    end
+    object Button3: TButton
+      Left = 184
+      Height = 21
+      Top = 40
+      Width = 40
+      Caption = 'Save'
+      OnClick = Button3Click
+      TabOrder = 6
+    end
+  end
+  object Memo1: TMemo
+    Left = 0
+    Height = 129
+    Top = 72
+    Width = 233
+    Align = alClient
+    ReadOnly = True
+    ScrollBars = ssAutoBoth
+    TabOrder = 1
+  end
+  object IdTCPClient1: TIdTCPClient
+    ConnectTimeout = 200
+    Port = 0
+    ReadTimeout = -1
+    left = 144
+    top = 88
+  end
+  object IdWhois1: TIdWhois
+    Host = 'whois.internic.net'
+    left = 40
+    top = 88
+  end
+  object IdAntiFreeze1: TIdAntiFreeze
+    left = 40
+    top = 144
+  end
+  object SaveDialog1: TSaveDialog
+    FileName = 'Report.txt'
+    Filter = 'txt|*.txt'
+    left = 144
+    top = 144
+  end
+end
