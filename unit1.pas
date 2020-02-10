@@ -14,9 +14,9 @@ type
 
   TForm1 = class(TForm)
     Button1: TButton;
-    Button2: TButton;
     Button3: TButton;
-    Find: TButton;
+    Button4: TButton;
+    Button2: TButton;
     Edit1: TEdit;
     IdAntiFreeze1: TIdAntiFreeze;
     IdTCPClient1: TIdTCPClient;
@@ -29,7 +29,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
-    procedure FindClick(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
   private
 
   public
@@ -64,17 +64,6 @@ begin
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
-begin
-  Memo1.Clear;
-end;
-
-procedure TForm1.Button3Click(Sender: TObject);
-begin
-  if SaveDialog1.Execute then
-    Memo1.Lines.SaveToFile(SaveDialog1.FileName);
-end;
-
-procedure TForm1.FindClick(Sender: TObject);
 var
   Line, FindResult: string;
   iPos: integer;
@@ -87,6 +76,17 @@ begin
     Memo1.Lines.Add(Line);
     Delete(FindResult, 1, Length(Line) + 1);
   end;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  Memo1.Clear;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  if SaveDialog1.Execute then
+    Memo1.Lines.SaveToFile(SaveDialog1.FileName);
 end;
 
 end.
